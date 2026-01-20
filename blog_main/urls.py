@@ -23,9 +23,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name='home'),
+    path('category/', include('blogs.urls')),
     path('search/', views.search, name='search'),
     path('dashboard/', views.dashboard, name='dashboard'),
-     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
      
     
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
